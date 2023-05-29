@@ -83,7 +83,7 @@ class Command(BaseCommand):
 
         scheduler.add_job(
             my_job,
-            trigger=CronTrigger(second="*/30"),  # Every 10 seconds
+            trigger = CronTrigger(day_of_week="fri", hour="18", minute="00"), #каждую пятницу в 18.00
             id="my_job",  # The `id` assigned to each job MUST be unique
             max_instances=1,
             replace_existing=True,
